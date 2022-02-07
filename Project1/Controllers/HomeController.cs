@@ -37,15 +37,85 @@ namespace Project1.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpGet]
+        public IActionResult TaskInput()
         {
-            return View();
+            ViewBag.Categories = Context.Categories.ToList();
+            return View(); 
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        // ADD inputs to database
+        [HttpPost]
+        public IActionResult TaskInput(Task tm)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            if (ModelState.IsValid)
+            {
+                Context.Add(tm);
+                Context.SaveChanges();
+
+                return View(); 
+                //return View("Confirmation", tm); 
+            }
+            else
+            {
+                ViewBag.Categories = Context.Categories.ToList();
+                return View(); 
+            }
         }
+
+        // VIEW
+        [HttpGet]
+        public IActionResult ViewTasks()
+        {
+            var applications = Context.Responses
+                .Include(x => x.Category)
+                .ToList();
+            return View(applications);
+        }
+
+
+        // UPDATE
+        [HttpGet]
+        public IActionResult Edit(int taskid) 
+        {
+            ViewBag.Categories = Context.Categories.ToList(); 
+
+            var movie = Context.Responses.Single(x => x.TaskId == taskid);  
+
+            return View("MovieForm", movie); 
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Task blah)
+        {
+            Context.Update(blah);
+            Context.SaveChanges();
+
+            return RedirectToAction("ViewTasks");
+        }
+
+
+        // DELETE
+        [HttpGet]
+        public IActionResult Delete(int taskid)
+        {
+            var task = Context.Responses.Single(x => x.TaskId == taskid);
+
+            return View(task);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Task blah)
+        {
+            Context.Responses.Remove(blah);
+            Context.SaveChanges();
+
+            return RedirectToAction("ViewTasks"); // redirect user back to view task page
+
+        }
+
+
+
+
     }
 }
