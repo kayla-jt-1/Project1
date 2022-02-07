@@ -1,6 +1,34 @@
 ﻿@{
-    ViewData["Title"] = "Quadrants";
+    ViewData["Title"] = "Tasks";
 }
 
+@model List<TaskCategory>
 
-@*TaskId*@
+<table class="table table-bordered table-striped">
+
+    <thead class="font-weight-bold">
+        <tr>
+            <td>Task Name</td>
+            <td>Due Date</td>
+            <td>Quadrant</td>
+            <td>Category ID</td>
+            <td>Completed?</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.TaskName.CategoryName</td>
+                <td>@x.DueDate</td>
+                <td>@x.Quadrant</td>
+                <td>@x.CategoryID</td>
+                <td>@x.Completed</td>
+
+                <td><a asp-controller="Home" asp-action="Update" asp-route-applicationid="@x.TaskId">Update</a></td>
+                <td><a asp-controller="Home" asp-action="Delete" asp-route-applicationid="@x.TaskId">Delete</a></td>
+            </trTaskId>
+        }
+    </tbody>
+</table>
