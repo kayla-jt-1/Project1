@@ -65,7 +65,7 @@ namespace Project1.Controllers
 
         // VIEW
         [HttpGet]
-        public IActionResult ViewTasks()
+        public IActionResult viewTasks()
         {
             var applications = Context.Responses
                 .Include(x => x.Category)
@@ -91,7 +91,7 @@ namespace Project1.Controllers
             Context.Update(blah);
             Context.SaveChanges();
 
-            return RedirectToAction("ViewTasks");
+            return RedirectToAction("viewTasks");
         }
 
 
@@ -110,7 +110,7 @@ namespace Project1.Controllers
             Context.Responses.Remove(blah);
             Context.SaveChanges();
 
-            return RedirectToAction("ViewTasks"); // redirect user back to view task page
+            return RedirectToAction("viewTasks"); // redirect user back to view task page
 
         }
 
