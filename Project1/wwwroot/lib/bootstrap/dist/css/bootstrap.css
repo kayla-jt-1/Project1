@@ -4,6 +4,24 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+
+body {
+    background-color: aliceblue;
+}
+
+.SiteHeadingOverwrite {
+    /*    font-family: "Raleway";*/
+    font-size: 40px;
+    display: block;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    line-height: 1;
+    color: black;
+    opacity: 0.65;
+    font-weight: 400;
+}
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
