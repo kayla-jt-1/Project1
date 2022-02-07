@@ -5,6 +5,14 @@ body {
     background-color: aliceblue; 
 }
 
+fieldset {
+    border-color: #c5cfd1;
+    background-color: white;
+    padding-left: 25px;
+    padding-top: 10px;
+    padding-right: 15px;
+}
+
 .SiteHeadingOverwrite {
 /*    font-family: "Raleway";*/
     font-size: 40px;
