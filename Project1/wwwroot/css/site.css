@@ -5,14 +5,14 @@ body {
 }
 
 .SiteHeadingOverwrite {
-    font-family: "Raleway";
+/*    font-family: "Raleway";*/
     font-size: 40px;
     display: block;
     margin-top: 2rem;
     margin-bottom: 2rem;
     text-transform: uppercase;
     line-height: 1;
-    font-family: "Raleway";
+/*    font-family: "Raleway";*/
     color: black;
     opacity: 0.65;
     font-weight: 400;
