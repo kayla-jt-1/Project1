@@ -55,8 +55,8 @@ namespace Project1.Controllers
                 Context.Add(tm);
                 Context.SaveChanges();
 
-                return View(); 
-                //return View("Confirmation", tm); 
+                //return View(); 
+                return View("Confirmation", tm);
             }
             else
             {
