@@ -10,7 +10,6 @@ namespace Project1.Models
     public class Task
     {
         
-        
         [Key]
         [Required]
         public int TaskId { get; set; }
@@ -19,7 +18,8 @@ namespace Project1.Models
         public string DueDate { get; set; }
         [Required]
         public string Quadrant { get; set; }
-        public string Category { get; set; } //Home, School, Work, Church)
+        public int CategoryID { get; set; } //Home, School, Work, Church)
+        public TaskCategory TaskCategory { get; set; }
         public bool Completed { get; set; }
     }
 }

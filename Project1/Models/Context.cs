@@ -14,19 +14,23 @@ namespace Project1.Models
             //leave blank for now 
         }
         public DbSet<Task> Responses { get; set; }
+        public DbSet<TaskCategory> Categories { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder mb)
+        {
+            //Create categories for category model
+            mb.Entity<TaskCategory>().HasData(
+            new TaskCategory { CategoryId = 1, CategoryName = "Comedy" },
+            new TaskCategory { CategoryId = 2, CategoryName = "Romantic Comedy" },
+            new TaskCategory { CategoryId = 3, CategoryName = "Drama" },
+            new TaskCategory { CategoryId = 4, CategoryName = "Family" },
+            new TaskCategory { CategoryId = 5, CategoryName = "Action/Adventure" },
+            new TaskCategory { CategoryId = 6, CategoryName = "Horror/Suspense" },
+            new TaskCategory { CategoryId = 7, CategoryName = "Television" }
+                );
+        }
 
 
-        // In case we need to seed the database 
 
-        //protected override void OnModelCreating(ModelBuilder mb)
-        //{
-        //    mb.Entity<Task>().HasData(
-        //        new Task
-        //        {
-        //            TaskId = 1,
-        //            TaskName = 
-        //        }
-        //    );
-        //}
     }
 }
