@@ -20,14 +20,12 @@ namespace Project1.Models
         {
             //Create categories for category model
             mb.Entity<TaskCategory>().HasData(
-            new TaskCategory { CategoryId = 1, CategoryName = "Comedy" },
-            new TaskCategory { CategoryId = 2, CategoryName = "Romantic Comedy" },
-            new TaskCategory { CategoryId = 3, CategoryName = "Drama" },
-            new TaskCategory { CategoryId = 4, CategoryName = "Family" },
-            new TaskCategory { CategoryId = 5, CategoryName = "Action/Adventure" },
-            new TaskCategory { CategoryId = 6, CategoryName = "Horror/Suspense" },
-            new TaskCategory { CategoryId = 7, CategoryName = "Television" }
-                );
+            new TaskCategory { CategoryId = 1, CategoryName = "Home" },
+            new TaskCategory { CategoryId = 2, CategoryName = "School" },
+            new TaskCategory { CategoryId = 3, CategoryName = "Work" },
+            new TaskCategory { CategoryId = 4, CategoryName = "Church" }
+
+            );
         }
 
 
