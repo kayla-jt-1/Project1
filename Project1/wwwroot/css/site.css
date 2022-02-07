@@ -4,6 +4,8 @@ body {
     background-color: aliceblue; 
 }
 
+<<<<<<< HEAD
+=======
 .SiteHeadingOverwrite {
 /*    font-family: "Raleway";*/
     font-size: 40px;
@@ -17,6 +19,7 @@ body {
     font-weight: 400;
 }
 
+>>>>>>> 373355938ff22f2050799ae27663d6a987eb5af7
 a.navbar-brand {
   white-space: normal;
   text-align: center;
