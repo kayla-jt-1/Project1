@@ -13,7 +13,7 @@ namespace Project1.Models
         {
             //leave blank for now 
         }
-        public DbSet<Task> Responses { get; set; }
+        public DbSet<TaskModel> Responses { get; set; }
         public DbSet<TaskCategory> Categories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder mb)

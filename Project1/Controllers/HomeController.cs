@@ -48,7 +48,7 @@ namespace Project1.Controllers
 
         // ADD inputs to database
         [HttpPost]
-        public IActionResult TaskInput(Task tm)
+        public IActionResult TaskInput(TaskModel tm)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +88,7 @@ namespace Project1.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(Task blah)
+        public IActionResult Edit(TaskModel blah)
         {
             Context.Update(blah);
             Context.SaveChanges();
@@ -107,7 +107,7 @@ namespace Project1.Controllers
         }
 
         [HttpPost]
-        public IActionResult Delete(Task blah)
+        public IActionResult Delete(TaskModel blah)
         {
             Context.Responses.Remove(blah);
             Context.SaveChanges();

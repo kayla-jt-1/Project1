@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Project1.Models
 {
-    public class Task
+    public class TaskModel
     {
         
         [Key]
