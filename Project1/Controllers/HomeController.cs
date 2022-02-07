@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Project1.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
+//using System.Threading.Tasks;
 
 //#1: Models / Database / Setup: This individual will build the models and set up the database.
 //They will populate the database with any needed info. They will also configure all the needed
@@ -26,10 +27,11 @@ namespace Project1.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private Context Context { get; set; }
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(Context blah)
         {
-            _logger = logger;
+            Context = blah;
         }
 
         public IActionResult Index()
@@ -68,7 +70,7 @@ namespace Project1.Controllers
         public IActionResult viewTasks()
         {
             var applications = Context.Responses
-                .Include(x => x.Category)
+                .Include(x => x.TaskCategory) // TaskCategory is the model
                 .ToList();
             return View(applications);
         }
@@ -80,9 +82,9 @@ namespace Project1.Controllers
         {
             ViewBag.Categories = Context.Categories.ToList(); 
 
-            var movie = Context.Responses.Single(x => x.TaskId == taskid);  
+            var task = Context.Responses.Single(x => x.TaskId == taskid);  
 
-            return View("MovieForm", movie); 
+            return View("TaskInput", task); 
         }
 
         [HttpPost]
