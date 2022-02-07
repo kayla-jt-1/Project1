@@ -20,12 +20,12 @@
     <input asp-for="Quadrant" />
     <br /><br />
 
-    <label asp-for="CategoryID">Category: </label>
-    <select asp-for="CategoryID">
+    <label asp-for="CategoryId">Category: </label>
+    <select asp-for="CategoryId">
         <option value="">Select a Category</option>
         @foreach (TaskCategory category in ViewBag.Categories)
         {
-            <option value="@category.CategoryID">@category.CategoryName</option>
+            <option value="@category.CategoryId">@category.CategoryName</option>
         }
     </select>
     <br /><br />
