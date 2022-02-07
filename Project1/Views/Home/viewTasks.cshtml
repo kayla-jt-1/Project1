@@ -2,7 +2,7 @@
     ViewData["Title"] = "Tasks";
 }
 
-@model List<TaskCategory>
+@model List<TaskModel>
 
 <table class="table table-bordered table-striped">
 
@@ -23,7 +23,7 @@
                 <td>@x.TaskName</td>
                 <td>@x.DueDate</td>
                 <td>@x.Quadrant</td>
-                <td>@x.CategoryID</td>
+                <td>@x.Category.CategoryName</td>
                 <td>@x.Completed</td>
 
                 <td><a asp-controller="Home" asp-action="Update" asp-route-applicationid="@x.TaskId">Update</a></td>
