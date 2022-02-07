@@ -26,7 +26,7 @@ namespace Project1.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        //private readonly ILogger<HomeController> _logger;
         private Context Context { get; set; }
 
         public HomeController(Context blah)
