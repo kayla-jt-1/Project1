@@ -18,8 +18,10 @@ namespace Project1.Models
         public string DueDate { get; set; }
         [Required]
         public string Quadrant { get; set; }
+
         public int CategoryId { get; set; } 
         public TaskCategory TaskCategory { get; set; }
+
         public bool Completed { get; set; }
     }
 }
