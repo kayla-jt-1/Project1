@@ -65,7 +65,7 @@ namespace Project1.Controllers
         }
 
         // VIEW
-        [HttpGet]
+        //[HttpGet]
         public IActionResult viewTasks()
         {
             var applications = Context.Responses
