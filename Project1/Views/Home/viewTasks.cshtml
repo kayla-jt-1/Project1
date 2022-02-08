@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Tasks";
+    ViewData["Header"] = "View Tasks";
 }
 
 @model List<TaskModel>
@@ -26,8 +27,8 @@
                 <td>@x.TaskCategory.CategoryName</td>
                 <td>@x.Completed</td>
 
-                <td><a asp-controller="Home" asp-action="Update" asp-route-applicationid="@x.TaskId">Update</a></td>
-                <td><a asp-controller="Home" asp-action="Delete" asp-route-applicationid="@x.TaskId">Delete</a></td>
+                <td><a asp-controller="Home" asp-action="Update" asp-route-id="@x.TaskId">Update</a></td>
+                <td><a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a></td>
             </tr>
         }
     </tbody>

@@ -2,7 +2,7 @@
 
 namespace Project1.Migrations
 {
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -29,8 +29,8 @@ namespace Project1.Migrations
                     DueDate = table.Column<string>(nullable: true),
                     Quadrant = table.Column<string>(nullable: false),
                     CategoryId = table.Column<int>(nullable: false),
-                    TaskCategoryCategoryId = table.Column<int>(nullable: true),
-                    Completed = table.Column<bool>(nullable: false)
+                    Completed = table.Column<bool>(nullable: false),
+                    TaskCategoryCategoryId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {

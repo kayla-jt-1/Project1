@@ -5,7 +5,8 @@
 
 @model Project1.Models.TaskModel
 
-<br /><br />
+<br />
+<br />
 
 <div class="container">
     <div class="row">
@@ -24,18 +25,14 @@
                     <input asp-for="DueDate" />
                     <br /><br />
 
-                    @*<label asp-for="Quadrant">Quadrant: </label>
-                    <select asp-for="Quadrant" />
-                        <option value="">Select a Quadrant:</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
+                    <label asp-for="Quadrant">Quadrant: </label>
+                    <select asp-for="Quadrant">
+                        <option value="1">Quadrant 1</option>
+                        <option value="2">Quadrant 2</option>
+                        <option value="3">Quadrant 3</option>
+                        <option value="4">Quadrant 4</option>
                     </select>
                     <br /><br />
-
-                    <label asp-for="Quadrant">Quadrant: </label>
-                    <select asp-for="Quadrant"
 
                     <label asp-for="CategoryId">Category: </label>
                     <select asp-for="CategoryId">
@@ -45,7 +42,7 @@
                             <option value="@category.CategoryId">@category.CategoryName</option>
                         }
                     </select>
-                    <br /><br />*@
+                    <br /><br />
 
                     <label asp-for="Completed">Completed: </label>
                     <select asp-for="Completed">
@@ -54,8 +51,8 @@
                     </select>
                     <br /><br />
 
-                    <button type="submit">Submit</button>
-
+                    <button type="submit" class="button" style="background-color: #C2D0DD; border: none; ">Submit</button>
+                    <br /><br />
                 </form>
             </fieldset>
 
@@ -72,4 +69,5 @@
 
 
 
-    
+
+
