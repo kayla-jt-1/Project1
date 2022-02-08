@@ -24,9 +24,18 @@
                     <input asp-for="DueDate" />
                     <br /><br />
 
-                    <label asp-for="Quadrant">Quadrant: </label>
-                    <input asp-for="Quadrant" />
+                    @*<label asp-for="Quadrant">Quadrant: </label>
+                    <select asp-for="Quadrant" />
+                        <option value="">Select a Quadrant:</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
                     <br /><br />
+
+                    <label asp-for="Quadrant">Quadrant: </label>
+                    <select asp-for="Quadrant"
 
                     <label asp-for="CategoryId">Category: </label>
                     <select asp-for="CategoryId">
@@ -36,7 +45,7 @@
                             <option value="@category.CategoryId">@category.CategoryName</option>
                         }
                     </select>
-                    <br /><br />
+                    <br /><br />*@
 
                     <label asp-for="Completed">Completed: </label>
                     <select asp-for="Completed">
