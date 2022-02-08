@@ -14,18 +14,43 @@ namespace Project1.Models
             //leave blank for now 
         }
         public DbSet<TaskModel> Responses { get; set; }
-        public DbSet<TaskCategory> Categories { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder mb)
         {
             //Create categories for category model
-            mb.Entity<TaskCategory>().HasData(
-                new TaskCategory { CategoryId = 1, CategoryName = "Home" },
-                new TaskCategory { CategoryId = 2, CategoryName = "School" },
-                new TaskCategory { CategoryId = 3, CategoryName = "Work" },
-                new TaskCategory { CategoryId = 4, CategoryName = "Church" }
+            mb.Entity<Category>().HasData(
+                new Category { CategoryId = 1, CategoryName = "Home" },
+                new Category { CategoryId = 2, CategoryName = "School" },
+                new Category { CategoryId = 3, CategoryName = "Work" },
+                new Category { CategoryId = 4, CategoryName = "Church" }
 
             );
+
+            mb.Entity<TaskModel>().HasData(
+                new TaskModel
+                {
+                    TaskId = 1,
+                    CategoryId = 2,
+                    TaskName = "Finish Mission 6",
+                    DueDate = "February 9, 2022",
+                    Quadrant = "1",
+                    Completed = false,
+                },
+                new TaskModel
+                {
+                    TaskId = 2,
+                    CategoryId = 4,
+                    TaskName = "Finish Book of Mosiah",
+                    DueDate = "February 12, 2022",
+                    Quadrant = "2",
+                    Completed = true,
+                }
+
+
+                );
         }
     }
 }
+
+

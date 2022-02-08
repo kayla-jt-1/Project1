@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project1.Models
 {
-    public class TaskCategory
+    public class Category
     {
         [Key]
         [Required]

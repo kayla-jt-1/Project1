@@ -69,7 +69,7 @@ namespace Project1.Controllers
         public IActionResult viewTasks()
         {
             var applications = Context.Responses
-                .Include(x => x.TaskCategory) // TaskCategory is the model
+                .Include(x => x.Category) // TaskCategory is the model
                 .ToList();
             return View(applications);
         }

@@ -2,7 +2,7 @@
 
 namespace Project1.Migrations
 {
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -28,19 +28,18 @@ namespace Project1.Migrations
                     TaskName = table.Column<string>(nullable: false),
                     DueDate = table.Column<string>(nullable: true),
                     Quadrant = table.Column<string>(nullable: false),
-                    CategoryId = table.Column<int>(nullable: false),
                     Completed = table.Column<bool>(nullable: false),
-                    TaskCategoryCategoryId = table.Column<int>(nullable: true)
+                    CategoryId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Responses", x => x.TaskId);
                     table.ForeignKey(
-                        name: "FK_Responses_Categories_TaskCategoryCategoryId",
-                        column: x => x.TaskCategoryCategoryId,
+                        name: "FK_Responses_Categories_CategoryId",
+                        column: x => x.CategoryId,
                         principalTable: "Categories",
                         principalColumn: "CategoryId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
@@ -63,10 +62,20 @@ namespace Project1.Migrations
                 columns: new[] { "CategoryId", "CategoryName" },
                 values: new object[] { 4, "Church" });
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Responses_TaskCategoryCategoryId",
+            migrationBuilder.InsertData(
                 table: "Responses",
-                column: "TaskCategoryCategoryId");
+                columns: new[] { "TaskId", "CategoryId", "Completed", "DueDate", "Quadrant", "TaskName" },
+                values: new object[] { 1, 2, false, "February 9, 2022", "1", "Finish Mission 6" });
+
+            migrationBuilder.InsertData(
+                table: "Responses",
+                columns: new[] { "TaskId", "CategoryId", "Completed", "DueDate", "Quadrant", "TaskName" },
+                values: new object[] { 2, 4, true, "February 12, 2022", "2", "Finish Book of Mosiah" });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Responses_CategoryId",
+                table: "Responses",
+                column: "CategoryId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
