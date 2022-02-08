@@ -9,6 +9,17 @@ body {
     background-color: aliceblue;
 }
 
+.button {
+    background-color: #959cab;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
 .SiteHeadingOverwrite {
     /*    font-family: "Raleway";*/
     font-size: 40px;
