@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 namespace Project1.Models
 {
     public class TaskModel
-    {
-        
+    {   
         [Key]
         [Required]
         public int TaskId { get; set; }
@@ -23,6 +22,5 @@ namespace Project1.Models
         public bool Completed { get; set; }
 
         public TaskCategory TaskCategory { get; set; }
-
     }
 }

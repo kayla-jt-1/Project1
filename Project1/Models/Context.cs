@@ -27,7 +27,5 @@ namespace Project1.Models
 
             );
         }
-
-
     }
 }

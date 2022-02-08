@@ -12,6 +12,5 @@ namespace Project1.Models
         [Required]
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
-
     }
 }
