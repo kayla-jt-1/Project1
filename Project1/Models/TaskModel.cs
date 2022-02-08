@@ -20,8 +20,9 @@ namespace Project1.Models
         public string Quadrant { get; set; }
 
         public int CategoryId { get; set; } 
+        public bool Completed { get; set; }
+
         public TaskCategory TaskCategory { get; set; }
 
-        public bool Completed { get; set; }
     }
 }
