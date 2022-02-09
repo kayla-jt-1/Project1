@@ -27,3 +27,5 @@ namespace Project1.Models
         public Category Category { get; set; }
     }
 }
+
+//note for me
