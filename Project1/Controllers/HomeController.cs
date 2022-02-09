@@ -83,8 +83,9 @@ namespace Project1.Controllers
 
             var task = Context.Responses.Single(x => x.TaskId == taskid);  
 
-            return View("TaskInput", task); 
+            return View("TaskInput", task);
         }
+
 
         [HttpPost]
         public IActionResult Edit(TaskModel blah)

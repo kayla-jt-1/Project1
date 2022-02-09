@@ -47,7 +47,6 @@ namespace Project1.Models
                     Completed = true,
                 }
 
-
                 );
         }
     }

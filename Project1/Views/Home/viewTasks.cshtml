@@ -1,133 +1,123 @@
 ﻿@{
     ViewData["Title"] = "Tasks";
-    ViewData["Header"] = "View Tasks";
+    ViewData["Header"] = "Uncompleted Tasks";
 }
 
 @model List<TaskModel>
 
-@*<div class="container" align="center">
-        <div class="row">
-            <div class="col-2"></div>
-            <div class="col-5">
-                <p class="font-weight-bold">Urgent</p>
-                @foreach (var x in Model)
-                {
-                    @if (x.Completed == true)
-                    {
-                        if (x.Quadrant == "1")
-                        {
-                            <br />
-                            @x.TaskName
-                            <br />
-                        }
-                    }
-                }
+<style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        background-color: #C2D0DD;
+        padding: 10px;
+    }
 
-            </div>
-            <div class="col-5">
-                <p class="font-weight-bold">Not Urgent</p>
+    .grid-item {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+    }
 
-                @foreach (var x in Model)
-                {
-                    @if (x.Completed == true)
-                    {
-                        if (x.Quadrant == "2")
-                        {
-                            <br />
-                            @x.TaskName
-                            <br />
-                        }
-                    }
-                }
-
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-2">
-                <p class="font-weight-bold">Important</p>
-
-                @foreach (var x in Model)
-                {
-                    @if (x.Completed == true)
-                    {
-                        if (x.Quadrant == "3")
-                        {
-                            <br />
-                            @x.TaskName
-                            <br />
-                        }
-                    }
-
-                    <a asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Update</a>
-                    <a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
-                }
-
-            </div>
-            <div class="col-5"></div>
-            <div class="col-5"></div>
-        </div>
-
-        <div class="row">
-            <div class="col-2">
-                <p class="font-weight-bold">Not Important</p>
-
-                @foreach (var x in Model)
-                {
-                    @if (x.Completed == true)
-                    {
-                        if (x.Quadrant == "4")
-                        {
-                            <br />
-                            @x.TaskName
-                            <br />
-                        }
-                    }
-
-                    <a asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Update</a>
-                    <a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
-                }
-
-            </div>
-            <div class="col-5"></div>
-            <div class="col-5"></div>
-        </div>
-    </div>*@
+</style>
 
 
+<div class="grid-container">
+    <div class="grid-item">
+        <h4 style="font-weight:bold">Quadrant 1</h4><br />
 
-<table style="background-color:white;" class="table;">
-    <thead class="font-weight-bold">
-        <tr>
-            <td class="col-3"></td>
-            <td class="col-3">Urgent</td>
-            <td class="col-3">Not Urgent</td>
-        </tr>
-
-        <tr>
-            <td>Important</td>
-        </tr>
-
-        <tr>
-            <td>Not Important</td>
-        </tr>
-    </thead>
-
-    <tbody>
         @foreach (var x in Model)
         {
-            <tr>
-                @if (x.Completed == true)
+            @if (x.Completed == true)
+            {
+                if (x.Quadrant == "1")
                 {
-                    if (x.Quadrant == "4")
-                    {
-                        <td>@x.TaskName</td>
+                    <container>
+                        <div class="row">
+                            <div class="col-9">
+                                <h5>@x.TaskName</h5>
+                            </div>
 
-                        <td><a asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a></td>
-                        <td><a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a></td>
-                    }
+                            <div class="col-1"><h5><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a></h5></div>
+                            <div class="col-2"><h5><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a></h5></div><br />
+                        </div>
+                    </container>
                 }
-            </tr>
+            }
         }
-    </tbody>
-</table>
+    </div>
+
+    <div class="grid-item">
+        <h4 style="font-weight:bold">Quadrant 2</h4><br />
+
+        @foreach (var x in Model)
+        {
+            @if (x.Completed == true)
+            {
+                if (x.Quadrant == "2")
+                {
+                    <container>
+                        <div class="row">
+                            <div class="col-9">
+                                <h5>@x.TaskName</h5>
+                            </div>
+
+                            <div class="col-1"><h5><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a></h5></div>
+                            <div class="col-2"><h5><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a></h5></div><br />
+                        </div>
+                    </container>
+                }
+            }
+        }
+    </div>
+
+    <div class="grid-item">
+        <h4 style="font-weight:bold">Quadrant 3</h4><br />
+
+        @foreach (var x in Model)
+        {
+            @if (x.Completed == true)
+            {
+                if (x.Quadrant == "3")
+                {
+                    <container>
+                        <div class="row">
+                            <div class="col-9">
+                                <h5>@x.TaskName</h5>
+                            </div>
+
+                            <div class="col-1"><h5><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a></h5></div>
+                            <div class="col-2"><h5><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a></h5></div><br />
+                        </div>
+                    </container>
+                }
+            }
+        }
+    </div>
+
+    <div class="grid-item">
+        <h4 style="font-weight:bold">Quadrant 4</h4><br />
+
+        @foreach (var x in Model)
+        {
+            @if (x.Completed == true)
+            {
+                if (x.Quadrant == "4")
+                {
+                    <container>
+                        <div class="row">
+                            <div class="col-9">
+                                <h5>@x.TaskName</h5>
+                            </div>
+
+                            <div class="col-1"><h5><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a></h5></div>
+                            <div class="col-2"><h5><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a></h5></div><br />
+                        </div>
+                    </container>
+                }
+            }
+        }
+    </div>
+</div>
