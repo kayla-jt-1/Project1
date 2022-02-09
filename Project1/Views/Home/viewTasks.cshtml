@@ -5,6 +5,7 @@
 
 @model List<TaskModel>
 
+@* Grid Style *@
 <style>
     .grid-container {
         display: grid;
@@ -23,14 +24,14 @@
 
 </style>
 
-
+@* Quadrant 1 *@
 <div class="grid-container">
     <div class="grid-item">
         <h4 style="font-weight:bold">Quadrant 1</h4><br />
 
         @foreach (var x in Model)
         {
-            @if (x.Completed == true)
+            @if (x.Completed == false)
             {
                 if (x.Quadrant == "1")
                 {
@@ -49,12 +50,13 @@
         }
     </div>
 
+@* Quadrant 2 *@
     <div class="grid-item">
         <h4 style="font-weight:bold">Quadrant 2</h4><br />
 
         @foreach (var x in Model)
         {
-            @if (x.Completed == true)
+            @if (x.Completed == false)
             {
                 if (x.Quadrant == "2")
                 {
@@ -73,12 +75,13 @@
         }
     </div>
 
+    @* Quadrant 3 *@
     <div class="grid-item">
         <h4 style="font-weight:bold">Quadrant 3</h4><br />
 
         @foreach (var x in Model)
         {
-            @if (x.Completed == true)
+            @if (x.Completed == false)
             {
                 if (x.Quadrant == "3")
                 {
@@ -97,12 +100,14 @@
         }
     </div>
 
+
+    @* Quadrant 4 *@
     <div class="grid-item">
         <h4 style="font-weight:bold">Quadrant 4</h4><br />
 
         @foreach (var x in Model)
         {
-            @if (x.Completed == true)
+            @if (x.Completed == false)
             {
                 if (x.Quadrant == "4")
                 {
